@@ -38,3 +38,9 @@ code {
 .navbar-toggler-icon {
   align-items: center;
 }
+h6,p {
+  text-align: left !important;
+}
+.img-fluid {
+  height:200px !important
+}
