@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar {
+  background-color:rgb(1,1,51)
+  !important;
+}
+.nav-link{
+  color:#C6AD8F
+  !important
+}
+.navbar-brand{ 
+  color:#F6F4F2 !important;
+  margin-left: 40px !important;
+}
+.navbar-nav {
+  margin-right: 40px !important;
+}
+
+.navbar-toggler{
+  color:#C6AD8F
+  !important
+}
+.collapse{
+  color:#C6AD8F
+  !important
+}
+.navbar-toggler-icon {
+  align-items: center;
+}
