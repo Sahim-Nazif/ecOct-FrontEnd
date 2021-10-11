@@ -44,3 +44,16 @@ h6,p {
 .img-fluid {
   height:200px !important
 }
+.links{
+  text-decoration: none;
+  color: inherit;
+}
+.links:hover{
+  color:inherit
+}
+.proImage{
+  height:300px !important
+}
+.produDes {
+  text-align:justify !important
+}

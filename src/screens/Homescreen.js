@@ -5,8 +5,7 @@ import products from '../Products'
 
 const Homescreen = () => {
 
-    const [product, setProduct] = useState([])
-
+    
     return (
         <div className='row justify-content-center'>
             {products.map(product => {
