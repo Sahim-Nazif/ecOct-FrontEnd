@@ -1,6 +1,6 @@
 const products=[{
     "id":1,
-    "rating": 5,
+    "rating": 3,
     "reviews" : [],
     "price": 35,
     "countInStock": 4,
@@ -12,7 +12,7 @@ const products=[{
   },{
     
     "id":2,
-    "rating": 5,
+    "rating": 3.5,
   "reviews" : [],
     "price": 875,
     "countInStock": 0,

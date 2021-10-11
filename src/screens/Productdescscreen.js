@@ -29,6 +29,9 @@ const Productdescscreen = ({ match }) => {
                             return <option value={index+1}>{index+1}</option>
                         })}
                         </select>
+                        {product.countInStock===0 ? 
+                        <p className='fs-6 text-danger'>Low Stock</p>
+                        :<p className='fs-6 text-success'>{product.countInStock} in stock</p>}
                         <hr/>
                         <button className='btn btn-dark text-uppercase'>add to cart</button>
                     </div>
