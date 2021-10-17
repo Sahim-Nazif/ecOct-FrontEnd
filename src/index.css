@@ -52,7 +52,9 @@ h6,p {
   color:inherit
 }
 .proImage{
-  height:300px !important
+  height:280px !important;
+  width:300px !important;
+ 
 }
 .produDes {
   text-align:justify !important

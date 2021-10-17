@@ -5,7 +5,7 @@ import products from '../Products'
 const Productdescscreen = ({ match }) => {
 
     const productid = match.params.id;
-    const product = products.find(product => product.id == productid)
+    const product = products.find(product => product.id === productid)
     return (
         <>
         <div>
@@ -30,7 +30,7 @@ const Productdescscreen = ({ match }) => {
                         })}
                         </select>
                         {product.countInStock===0 ? 
-                        <p className='fs-6 text-danger'>Low Stock</p>
+                        <p className='fs-6 text-danger'>Low stock</p>
                         :<p className='fs-6 text-success'>{product.countInStock} in stock</p>}
                         <hr/>
                         <button className='btn btn-dark text-uppercase'>add to cart</button>

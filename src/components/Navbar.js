@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">ecOct</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                    <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
@@ -16,7 +16,7 @@ const Navbar = () => {
                             <a className="nav-link" href="#">Login</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                            <a className="nav-link" href="#"><i className="fas fa-shopping-cart"></i></a>
                         </li>
                         
                     </ul>
