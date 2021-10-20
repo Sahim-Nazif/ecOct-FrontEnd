@@ -6,11 +6,13 @@ export const getAllProducts=()=> async(dispatch)=>{
 
 
     await axios.get('/api/product/all').then(response=>{
-        console.log(response)
-         dispatch({type:'GET_PRODUCTS_SUCCESS', playload: response.data})
+       
+         dispatch({
+                type:'GET_PRODUCTS_SUCCESS', 
+                payload: response.data})
     }).catch(error => {
         console.log(error)
-        dispatch({type:'GET_PRODUCTS_FAILD', playload:error})
+        dispatch({type:'GET_PRODUCTS_FAILD', payload:error})
     })
 
 }

@@ -1,5 +1,5 @@
 
-export const getAllProductReducer=(state={}, action)=>{
+export const getAllProductReducer=(state={products:[]}, action)=>{
 
 
     switch (action.type) {
@@ -12,7 +12,8 @@ export const getAllProductReducer=(state={}, action)=>{
         case 'GET_PRODUCTS_FAILED':
             return {loading:false, error:action.payload}
         
-        default: state
+        default: 
+            return state
         }
 
 }
