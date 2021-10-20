@@ -4,11 +4,13 @@ import Rating from 'react-rating'
 
 
 const Product = ({ product }) => {
+
+    
     return (
 
         <div className="col-md-3 m-3 card p-2 ">
             <div className="card-body" >
-                <Link className='links' to={`product/${product.id}`}>
+                <Link className='links' to={`product/${product._id}`}>
                     <img src={product.image} className='img-fluid' />
                     <div className='text-start'>
                     <h6 className='card-title mt-4'>{product.name}</h6>

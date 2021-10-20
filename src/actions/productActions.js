@@ -12,7 +12,7 @@ export const getAllProducts=()=> async(dispatch)=>{
                 payload: response.data})
     }).catch(error => {
         console.log(error)
-        dispatch({type:'GET_PRODUCTS_FAILD', payload:error})
+        dispatch({type:'GET_PRODUCTS_FAILED', payload:error})
     })
 
 }
