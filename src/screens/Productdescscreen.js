@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import products from '../Products'
-
+import { useDispatch, useSelector } from 'react-redux';
 
 const Productdescscreen = ({ match }) => {
 
+    const dispatch=useDispatch()
     const productid = match.params.id;
     const product = products.find(product => product.id === productid)
+
+    useEffect(()=>{
+
+            dispatch(getProductById(productid))
+    },[])
+
     return (
         <>
         <div>

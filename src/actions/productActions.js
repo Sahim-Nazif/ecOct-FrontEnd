@@ -16,3 +16,21 @@ export const getAllProducts=()=> async(dispatch)=>{
     })
 
 }
+
+
+export const getProductById=(id)=> async(dispatch)=>{
+
+    dispatch({type:'GET_PRODUCTBYID_REQUEST'})
+
+
+    await axios.post('/api/product/byId', {id}).then(response=>{
+       
+         dispatch({
+                type:'GET_PRODUCTBYID_SUCCESS', 
+                payload: response.data})
+    }).catch(error => {
+        console.log(error)
+        dispatch({type:'GET_PRODUCTBYID_FAILED', payload:error})
+    })
+
+}
