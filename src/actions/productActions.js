@@ -18,12 +18,12 @@ export const getAllProducts=()=> async(dispatch)=>{
 }
 
 
-export const getProductById=(id)=> async(dispatch)=>{
+export const getProductById=(productId)=> async(dispatch)=>{
 
     dispatch({type:'GET_PRODUCTBYID_REQUEST'})
 
 
-    await axios.post('/api/product/byId', {id}).then(response=>{
+    await axios.post('/api/product/byId', {productId}).then(response=>{
        
          dispatch({
                 type:'GET_PRODUCTBYID_SUCCESS', 

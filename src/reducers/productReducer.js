@@ -26,7 +26,7 @@ export const getProductByIdReducer=(state={product:[]}, action)=>{
             return {loading:true, }
     
         case 'GET_PRODUCTBYID_SUCCESS':
-            return {loading:false, products:action.payload}
+            return {loading:false, product:action.payload}
 
         case 'GET_PRODUCTBYID_FAILED':
             return {loading:false, error:action.payload}
