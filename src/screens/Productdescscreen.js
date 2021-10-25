@@ -10,10 +10,19 @@ const Productdescscreen = ({ match }) => {
     const productid = match.params.id;
     const dispatch=useDispatch()
 
+    const[quantity, setQuantity]=useState(1);
+
     const getProdudctByState=useSelector(state=>state.getProductByIdReducer)
 
     const {product, loading, error}=getProdudctByState
 
+   const handleChange=quantity=>event=>{
+
+        setQuantity(event.target.value)
+   }
+    const handleAddtoCart=()=>{
+        alert(quantity)
+    }
     
    // const product = products.find(product => product.id === productid)
 
@@ -41,7 +50,7 @@ const Productdescscreen = ({ match }) => {
                              <h6>Price: ${product.price}</h6>
                              <hr/>
                              <h6 >Select Quanity:</h6>
-                             <select>
+                             <select value={quantity} onChange={handleChange()}>
                              {[...Array(product.countInStock).keys()].map((product, index)=>{
      
                                  return <option value={index+1}>{index+1}</option>
@@ -52,7 +61,7 @@ const Productdescscreen = ({ match }) => {
                              (<p className='fs-6 text-danger'>Almost gone</p>)
                              :(<p className='fs-6 text-success'>{product.countInStock} in stock</p>)}
                              <hr/>
-                             <button className='btn btn-dark text-uppercase'>add to cart</button>
+                             <button className='btn btn-dark text-uppercase' onClick={handleAddtoCart}>add to cart</button>
                          </div>
                      </div>
                  </div>
