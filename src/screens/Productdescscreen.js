@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import products from '../Products'
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../actions/productActions';
-
+import {addToCart} from '../actions/cartActions'
 
 
 const Productdescscreen = ({ match }) => {
@@ -21,7 +21,8 @@ const Productdescscreen = ({ match }) => {
         setQuantity(event.target.value)
    }
     const handleAddtoCart=()=>{
-        alert(quantity)
+       
+        dispatch(addToCart(product, quantity))
     }
     
    // const product = products.find(product => product.id === productid)
