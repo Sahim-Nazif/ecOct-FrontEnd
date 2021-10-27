@@ -1,13 +1,13 @@
 export const addToCart=(product, quantity)=>dispatch=>{
 
-    const cartItem={
+    const cartItems={
 
         name:product.name,
         _id:product._id,
         price:product.price,
-        counInStock:product.counInStock,
+        inStock:product.countInStock,
         quantity:quantity
     }
 
-    dispatch({type:'ADD_TO_CART', payload:cartItem})
+    dispatch({type:'ADD_TO_CART', payload:cartItems})
 }
