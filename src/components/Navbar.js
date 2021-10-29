@@ -22,7 +22,7 @@ const{cartItems}=addtocartreducer
                             <a className="nav-link" href="#">Login</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#"><i className="fas fa-shopping-cart"></i> {cartItems.length} </a>
+                            <a className="nav-link" href="/cart"><i className="fas fa-shopping-cart"></i> {cartItems.length} </a>
                         </li>
                         
                     </ul>
