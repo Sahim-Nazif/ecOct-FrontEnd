@@ -19,6 +19,7 @@ const Cartscreen = () => {
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
+                            <th>Count</th>
                             <th>Remove</th>
                         </tr>
                         </thead>
@@ -28,17 +29,33 @@ const Cartscreen = () => {
                                     <tr>
                                         <td>{item.name}</td>
                                         <td>${item.price}</td>
-                                        <td>{item.quantity}</td>
+                                        <td>
+                                            <select>
+                                                {[...Array(item.countInStock).keys()].map((x, i)=>{
+                                                    return (
+                                                        <option value={i+1}>
+                                                            {i+1}
+                                                        </option>    
+
+                                                    ) 
+                                                })}
+                                            </select>
+                                        </td>
+                                        
                                         <td>${item.price * item.quantity}</td>
+                                        <td>{item.countInStock}</td>
                                          <td><i class="fas fa-trash"></i></td>
                                      </tr>   
+                                     
                                     )
+                                    
                                 })}
                         </tbody>
                       
                     </table>
 
                 </div>
+           
            </div>
         </div>
     )
