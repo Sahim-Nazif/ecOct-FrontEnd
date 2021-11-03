@@ -20,10 +20,9 @@ const Homescreen = () => {
             
         <div className='row justify-content-center'>
          
-            {loading ? (<div class="d-flex justify-content-center">
-                        <div class="spinner-border"   role="status">
+            {loading ? (<div>  <i className="fas fa-circle-notch fa-spin fa-4x"></i>
                             <span class="sr-only">Loading...</span>
-                        </div>
+                        
                         </div>):error ? (<h2>Sorry No Data Available</h2>)
 
                 :( products.map((product,i)=>{
