@@ -8,7 +8,9 @@ const Cartscreen = () => {
 
     const dispatch=useDispatch()
 
-    const {cartItems}= cartReducerState
+     const {cartItems}= cartReducerState
+
+    let cartTotal=cartItems.reduce((acc, item)=>acc + (item.price*item.quantity),0)
     return (
         <div>
            <div className='row mt-3 justify-content-center'>
@@ -45,19 +47,21 @@ const Cartscreen = () => {
                                         </td>
                                         
                                         <td>${item.price * item.quantity}</td>
-                                        <td><i className="fas fa-trash" onClick={()=>dispatch(deleteFromCart(item))}></i></td>
+                                       <td><i className="fas fa-trash" onClick={()=>dispatch(deleteFromCart(item))}></i></td>
                                      </tr>   
                                      
                                     )
                                     
                                 })}
+                               
                         </tbody>
                       
                     </table>
 
                 </div>
-           
+          
            </div>
+           <h4>Cart Total: $ {cartTotal}</h4>
         </div>
     )
 }
