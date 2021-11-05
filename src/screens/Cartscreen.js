@@ -4,7 +4,7 @@ import { addToCart, deleteFromCart } from '../actions/cartActions'
 
 const Cartscreen = () => {
 
-    const cartReducerState= useSelector(state => state.addToCartReducer)
+    const cartReducerState= useSelector(state => state.cartReducer)
 
     const dispatch=useDispatch()
 
@@ -45,7 +45,7 @@ const Cartscreen = () => {
                                         </td>
                                         
                                         <td>${item.price * item.quantity}</td>
-                                        <td><i className="fas fa-trash" onClick={dispatch(deleteFromCart(item))}></i></td>
+                                        <td><i className="fas fa-trash" onClick={()=>dispatch(deleteFromCart(item))}></i></td>
                                      </tr>   
                                      
                                     )

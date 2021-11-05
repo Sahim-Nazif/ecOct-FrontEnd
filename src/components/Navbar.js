@@ -6,9 +6,9 @@ import { useDispatch,useSelector } from 'react-redux'
 const Navbar = () => {
 
     
-const addtocartreducer=useSelector(state=>state.addToCartReducer)
+const cartReducer=useSelector(state=>state.cartReducer)
 
-const{cartItems}=addtocartreducer
+const{cartItems}=cartReducer
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">

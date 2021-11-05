@@ -2,20 +2,20 @@ import { getAllProductReducer, getProductByIdReducer } from "./reducers/productR
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {addToCartReducer} from './reducers/cartReducer'
+import {cartReducer} from './reducers/cartReducer'
 
 const reducer=combineReducers ({
 
     getAllProductReducer:getAllProductReducer,
     getProductByIdReducer:getProductByIdReducer,
-    addToCartReducer:addToCartReducer
+    cartReducer:cartReducer
 })
 
 const cartItems= localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')): []
 
 const initialState= {
 
-  addToCartReducer:{ cartItems: cartItems}
+  cartReducer:{ cartItems: cartItems}
 }
 const composeEnhancers = composeWithDevTools({
     // Specify here name, actionsBlacklist, actionsCreators and other options
