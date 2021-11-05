@@ -14,7 +14,7 @@ const Cartscreen = () => {
     return (
         <div>
            <div className='row mt-3 justify-content-center'>
-                <div className='col-md-8'>
+                <div className='col-md-8 card'>
                     <h3 className='m-4'>My Cart </h3>
                     <table className='table table-bordered '>
                   
@@ -57,11 +57,12 @@ const Cartscreen = () => {
                         </tbody>
                       
                     </table>
-
+                    {cartTotal===0 ? <p className='text-center'>Your Cart is Empty</p> :<h4>Cart Total: $ {cartTotal}</h4>}
+                   
                 </div>
-          
+               
            </div>
-           <h4>Cart Total: $ {cartTotal}</h4>
+           <button className='btn btn-dark btn-sm mt-4'>Pay Now</button>
         </div>
     )
 }
