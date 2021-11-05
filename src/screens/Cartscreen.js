@@ -62,7 +62,7 @@ const Cartscreen = () => {
                 </div>
                
            </div>
-           <button className='btn btn-dark btn-sm mt-4'>Pay Now</button>
+           {cartTotal===0 ? "" :<button className='btn btn-dark btn-sm mt-4'>Pay Now</button>}
         </div>
     )
 }

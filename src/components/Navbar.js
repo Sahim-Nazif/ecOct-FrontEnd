@@ -19,7 +19,7 @@ const{cartItems}=cartReducer
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Login</a>
+                            <a className="nav-link" href="/login">Login</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/cart"><i className="fas fa-shopping-cart"></i> {cartItems.length} </a>
