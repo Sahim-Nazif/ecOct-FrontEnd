@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {signUpAction} from '../actions/userActions'
 
 const Signup = () => {
 
@@ -6,6 +8,8 @@ const Signup = () => {
     const [email, setEmail]=useState('')
     const [password, setPassword]=useState('')
     const [confirmPassword, setConfirmPassword]=useState('')
+
+    const dispatch=useDispatch()
 
     const signUp = (e)=>{
 
@@ -18,6 +22,7 @@ const Signup = () => {
             }
             
         if (password ==confirmPassword) {
+            dispatch(signUpAction())
         } else {
             alert('Passwords do not match!')
         }

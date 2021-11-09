@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-export const signUp=()=>dispatch=>{
+export const signUpAction=()=>dispatch=>{
 
     dispatch({type:'USER_SIGNUP_REQUEST'})
 
