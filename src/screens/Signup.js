@@ -22,7 +22,7 @@ const Signup = () => {
             }
             
         if (password ==confirmPassword) {
-            dispatch(signUpAction())
+            dispatch(signUpAction(user))
         } else {
             alert('Passwords do not match!')
         }
