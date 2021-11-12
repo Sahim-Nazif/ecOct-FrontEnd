@@ -9,7 +9,7 @@ export const signUpReducer=(state={}, action)=>{
             return {loading:false, success:true}
 
         case 'USER_SIGNUP_FAILED':
-            return {loading:true, error:true}
+            return {loading:true, error:'Looks like this user already exists!'}
         
         default: 
             return state
