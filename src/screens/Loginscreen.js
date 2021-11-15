@@ -42,8 +42,8 @@ const Loginscreen = () => {
                 
                
                 </div>
-                <div className="d-flex loginButton justify-content-end">
-                <button className='btn btn-dark' onClick={login}>
+                <div className="d-flex justify-content-end">
+                <button className='loginButton btn btn-dark' onClick={login}>
                     Login
                 </button>
                 </div>

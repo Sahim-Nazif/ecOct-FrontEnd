@@ -67,7 +67,19 @@ h6,p {
 @media only screen and (max-width: 320px) {
   .signupLink{
 
-    font-size:2px !important
+    margin-left:-8px !important 
+  
+  }
+  
+}
+.loginButton {
+  margin-right:10px !important;
+}
+
+@media  screen and (max-width: 320px) {
+  .loginButton{
+
+    all:none
   
   }
   
