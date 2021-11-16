@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import {loginAction} from '../actions/userActions'
+
 
 const Loginscreen = () => {
 
@@ -17,7 +19,7 @@ const Loginscreen = () => {
                 email:email,
                 password:password
             }
-            
+            dispatch(loginAction(user))
          
     }
     return (

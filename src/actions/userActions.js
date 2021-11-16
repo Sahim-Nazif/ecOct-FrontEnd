@@ -20,10 +20,15 @@ export const signUpAction=(user)=>dispatch=>{
 export const loginAction=(user)=>dispatch=>{
 
    dispatch({type:'USER_LOGIN_REQUEST'})
-
+   
    axios.post('/api/user/login', user)
         .then(res=> {
            dispatch({type:'USER_LOGIN_SUCCESS'})
+
+           localStorage.setItem('currentUser', JSON.stringify(res.data))
+
+            window.location.href='/';
+
         }).catch(error=>{dispatch({type:'USER_LOGIN_FAILED', payload:error})
 
         console.log(error)
