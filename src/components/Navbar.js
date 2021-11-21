@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-
+import {logout} from '../actions/userActions'
 
 
 const Navbar = () => {
@@ -9,6 +9,8 @@ const Navbar = () => {
 const cartReducer=useSelector(state=>state.cartReducer)
 
 const currentUser=JSON.parse(localStorage.getItem('currentUser'))
+
+const dispatch=useDispatch()
 
 const{cartItems}=cartReducer
     return (
@@ -32,11 +34,12 @@ const{cartItems}=cartReducer
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle plg" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              {currentUser.name}
+             {console.log(currentUser.name)}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" onClick={()=>{dispatch(logout())}}>Logout</a></li>
           </ul>
         </li>
       </ul>
