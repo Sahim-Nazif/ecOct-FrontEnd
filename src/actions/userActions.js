@@ -36,3 +36,13 @@ export const loginAction=(user)=>dispatch=>{
        })
 
 }
+
+export const logout=()=>dispatch=>{
+
+   localStorage.removeItem('currentUser')
+   localStorage.removeItem('cartItems')
+
+   dispatch({type:'USER_LOGOUT'})
+
+   window.location.href='/login'
+}
