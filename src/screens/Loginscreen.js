@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {loginAction} from '../actions/userActions'
 
@@ -22,6 +22,13 @@ const Loginscreen = () => {
             dispatch(loginAction(user))
          
     }
+
+    useEffect(()=>{
+
+        if (localStorage.getItem('currentUser')) {
+            window.location.href='/'
+        }
+    },[])
     return (
             <div className='row container col-md-8 offset-md-2 mt-5'>
                  <div className='d-flex justify-content-center'>
