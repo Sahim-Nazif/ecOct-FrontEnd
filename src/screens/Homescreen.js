@@ -5,7 +5,7 @@ import axios from 'axios'
 import {useDispatch, useSelector} from 'react-redux'
 import {getAllProducts} from '../actions/productActions'
 import Loader from '../components/Loader'
-
+import Error from '../components/Error'
 
 const Homescreen = () => {
 
@@ -22,7 +22,7 @@ const Homescreen = () => {
             
         <div className='row justify-content-center'>
          
-            {loading ? (<Loader/>):error ? (<h2>Sorry No Data Available</h2>)
+            {loading ? (<Loader/>):error ? (<Error error='Sorry No Data Available'/>)
 
                 :( products.map((product,i)=>{
                     return <Product product={product} key={i}/>
