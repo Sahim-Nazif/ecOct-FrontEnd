@@ -22,9 +22,10 @@ const Homescreen = () => {
         
     },[dispatch])
     return (
-            
+        <div>
+        <Filter/>
         <div className='row justify-content-center'>
-         <Filter/>
+        
             {loading ? (<Loader/>):error ? (<Error error='Sorry No Data Available'/>)
 
                 :( products.map((product,i)=>{
@@ -32,6 +33,7 @@ const Homescreen = () => {
                 }))
             }
             
+        </div>
         </div>
     )
  

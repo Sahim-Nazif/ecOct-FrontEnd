@@ -89,3 +89,13 @@ h6,p {
   !important
 }
 
+.filterBtn{
+  width:200px
+  !important
+}
+@media  screen and (max-width:320) {
+  
+  .filterBtn {
+    padding-top: 40px !important;
+  }
+}
