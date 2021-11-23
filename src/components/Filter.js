@@ -10,21 +10,21 @@ const Filter = () => {
         <div>
             <div className='row justify-content-center mt-5'>
                 <div className='col-md-3'>
-                    <input type='text' placeholder='search products' className='form-control'/>
+                    <input type='text' value={searchKey} onChange={(e)=>{setSearchKey(e.target.value)}} placeholder='search products' className='form-control'/>
                 </div>
                 <div className='col-md-2'>
-                    <select className='form-control'>
-                        <option value=''>Popular</option>
-                        <option value=''>High to Low</option>
-                        <option value=''>Low to High</option>
+                    <select className='form-control' value={sort} onChange={(e)=>{setSort(e.target.value)}}>
+                        <option value='Popular'>Popular</option>
+                        <option value='htl'>High to Low</option>
+                        <option value='lth'>Low to High</option>
                     </select>
                 </div>
                 <div className='col-md-2'>
-                <select className='form-control'>
-                        <option value=''>All</option>
-                        <option value=''>Electronics</option>
-                        <option value=''>Fashion</option>
-                        <option value=''>Games</option>
+                <select className='form-control' value={category} onChange={(e)=>{setCategory(e.target.value)}}>
+                        <option value='all'>All</option>
+                        <option value='electronics'>Electronics</option>
+                        <option value='fashion'>Fashion</option>
+                        <option value='games'>Games</option>
                     </select>
                 </div>
                 <div className='col-md-2'>
