@@ -9,7 +9,7 @@ export const signUpReducer=(state={}, action)=>{
             return {loading:false, success:true}
 
         case 'USER_SIGNUP_FAILED':
-            return {loading:true, error:'Looks like this user already exists!'}
+            return {loading:false, error:'Looks like this user already exists!'}
         
         default: 
             return state
@@ -26,7 +26,7 @@ export const loginReducer=(state={}, action)=>{
             return {loading:false, success:true}
 
         case 'USER_LOGIN_FAILED':
-            return {loading:true, error:'Invalid credentials'}
+            return {loading:false, error:'Invalid credentials'}
 
         case 'USER_LOGOUT':
             return {...state}

@@ -1,9 +1,15 @@
 import React,{useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {signUpAction} from '../actions/userActions'
+import Error from '../components/Error'
+import Loader from '../components/Loader'
+import Success from '../components/Success'
+
 
 const Signup = () => {
 
+    const signupreducer=useSelector(state=>state.signUpReducer)
+    const {error, success, loading}=signupreducer
     const [name, setName]=useState('')
     const [email, setEmail]=useState('')
     const [password, setPassword]=useState('')
@@ -32,6 +38,9 @@ const Signup = () => {
             <div className='row container col-md-8 offset-md-2 mt-5'>
                  <div className='d-flex justify-content-center'>
                 <div className='col-8 p-3 card'>
+                    {error && (<Error error='Please try again!'/>) }
+                    {loading && (<Loader />)}
+                    {success && (<Success success='You are all set!' />)}
                  <h5 >Register</h5>  
             <form onSubmit={signUp}>
                 

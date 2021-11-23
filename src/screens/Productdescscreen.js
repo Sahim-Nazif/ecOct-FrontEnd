@@ -3,7 +3,7 @@ import products from '../Products'
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../actions/productActions';
 import {addToCart} from '../actions/cartActions'
-
+import Loader from '../components/Loader'
 
 const Productdescscreen = ({ match }) => {
 
@@ -35,7 +35,7 @@ const Productdescscreen = ({ match }) => {
     return (
         <>
         
-            {loading ? (<h2>Loading...</h2>) : error ? (<h2>Looks like there is an error</h2>) :(
+            {loading ? (<Loader/>) : error ? (<h2>Looks like there is an error</h2>) :(
                  <div>
                  <h2 className='mt-5'>Product Details</h2>
                  <div className='row'>

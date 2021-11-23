@@ -1,10 +1,14 @@
 import React,{useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {loginAction} from '../actions/userActions'
-
+import Loader from '../components/Loader'
+import Error from '../components/Error'
 
 const Loginscreen = () => {
 
+    const loginreducer=useSelector(state=>state.loginReducer)
+
+    const {error, loading}=loginreducer
     const [email, setEmail]=useState('')
     const [password, setPassword]=useState('')
    
@@ -33,12 +37,15 @@ const Loginscreen = () => {
             <div className='row container col-md-8 offset-md-2 mt-5'>
                  <div className='d-flex justify-content-center'>
                 <div className='col-8 p-3 card'>
+             
                  <h5 >Sign In</h5>  
+                 {error && (<Error error='Invalid Credentails'/>)}
+                 {loading && (<Loader/>)}
             <form onSubmit={login}>
                            
                 <div className='form-group p-2'>
             
-                    <input  type='email' placeholder='Email' className='form-control' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+                    <input  type='email' placeholder='Email' className='form-control' required value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
                 </div>
               
                 <div className='form-group p-2'>
