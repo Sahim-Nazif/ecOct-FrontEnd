@@ -34,3 +34,9 @@ export const getProductById=(productId)=> async(dispatch)=>{
     })
 
 }
+
+export const filterProducts=()=>dispatch=>{
+    dispatch ({type:'GET_PRODUCTS_REQUEST'})
+
+    axios.get('/api/products/getall')
+}
