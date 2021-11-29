@@ -35,8 +35,37 @@ export const getProductById=(productId)=> async(dispatch)=>{
 
 }
 
-export const filterProducts=()=>dispatch=>{
+export const filterProducts=(searchKey, sortKey, category)=>dispatch=>{
+
+    let filteredProducts;
     dispatch ({type:'GET_PRODUCTS_REQUEST'})
 
-    axios.get('/api/products/getall')
+ axios.get('/api/product/all').then(response=>{
+        if (searchKey){
+            filteredProducts=response.data.filter(product=>{
+                return product.name.toLowerCase().includes(searchKey)
+            })
+        } 
+        if (sortKey !='popular') {
+            if (sortKey=='htl') {
+                filteredProducts =response.data.sort((a, b)=>{
+                    return -a.price + b.price
+                })
+            }
+             else {
+                filteredProducts=response.data.sort((a, b)=>{
+                    return a.price - b.price
+                })
+             }
+        }
+        if (category !='all') {
+            filteredProducts=response.data.filter(product=>{
+                return product.category.toLowerCase().includes(category)
+            })
+        }
+        dispatch({type:'GET_PRODUCTS_SUCCESS',payload:filteredProducts})
+
+    }).catch(error=>{
+        dispatch({type:'GET_PRODUCTS_FAILED'})
+    })
 }

@@ -1,10 +1,14 @@
 import React, {useState} from 'react'
+import {useDispatch} from 'react-redux'
+import { filterProducts } from '../actions/productActions'
 
 const Filter = () => {
 
     const [searchKey, setSearchKey]=useState('')
     const [sort, setSort]=useState('popular')
     const [category, setCategory]=useState('all')
+
+    const dispatch=useDispatch()
 
     return (
         <div>
@@ -28,7 +32,7 @@ const Filter = () => {
                     </select>
                 </div>
                 <div className='col-md-2'>
-                    <button className='btn btn-dark filterBtn'>Filter</button>
+                    <button className='btn btn-dark filterBtn' onClick={()=>{dispatch(filterProducts(searchKey,sort, category))}}>Filter</button>
                 </div>
             </div>
         </div>
