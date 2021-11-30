@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useDispatch, useSelector} from 'react-redux'
 import { addToCart, deleteFromCart } from '../actions/cartActions'
-
+ import Checkout from '../components/Checkout'
 const Cartscreen = () => {
 
     const cartReducerState= useSelector(state => state.cartReducer)
@@ -62,7 +62,7 @@ const Cartscreen = () => {
                 </div>
                
            </div>
-           {cartTotal===0 ? "" :<button className='btn btn-dark btn-sm mt-4'>Pay Now</button>}
+           <Checkout amount={cartTotal} />
         </div>
     )
 }
