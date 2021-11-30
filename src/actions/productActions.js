@@ -41,6 +41,8 @@ export const filterProducts=(searchKey, sortKey, category)=>dispatch=>{
     dispatch ({type:'GET_PRODUCTS_REQUEST'})
 
  axios.get('/api/product/all').then(response=>{
+
+    filteredProducts=response.data
         if (searchKey){
             filteredProducts=response.data.filter(product=>{
                 return product.name.toLowerCase().includes(searchKey)
