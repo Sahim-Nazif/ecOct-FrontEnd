@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useReducer } from 'react'
+
 
 
 export const signUpAction=(user)=>dispatch=>{
