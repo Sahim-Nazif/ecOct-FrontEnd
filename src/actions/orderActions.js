@@ -6,6 +6,19 @@ export const placeOrder=(token, cartTotal)=>(dispatch, getState)=>{
     const currentUser=getState().loginReducer.currentUser
     const cartItems=getState().cartReducer.cartItems
 
+    const items= new Array()
+    
+    for(let i =0 ; i<cartItems.length;i++) {
+
+        var items={
+            name:cartItems[i].name,
+            quantity:cartItems[i].quantity,
+            price:cartItems[i].price,
+            _id:cartItems[i]._id
+        }
+
+        items.push(items)
+    }
     dispatch({type:'PLACE_ORDER_REQUEST'})
 
     axios.post('/api/orders/placeOrder', {token, cartTotal, currentUser, cartItems}).then(res=>{
