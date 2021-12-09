@@ -6,7 +6,7 @@ export const placeOrder=(token, cartTotal)=>(dispatch, getState)=>{
     const currentUser=getState().loginReducer.currentUser
     const cartItems=getState().cartReducer.cartItems
 
-    const items= new Array()
+    const newItems= new Array()
     
     for(let i =0 ; i<cartItems.length;i++) {
 
@@ -17,7 +17,7 @@ export const placeOrder=(token, cartTotal)=>(dispatch, getState)=>{
             _id:cartItems[i]._id
         }
 
-        items.push(items)
+        newItems.push(items)
     }
     dispatch({type:'PLACE_ORDER_REQUEST'})
 
