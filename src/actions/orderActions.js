@@ -29,7 +29,7 @@ export const placeOrder=(token, cartTotal)=>(dispatch, getState)=>{
     })
 }
 
-export const getOrderByUserId=()=>{
+export const getOrderByUserId=(dispatch)=>{
     
     dispatch({type:'GET_ORDERSBYUSERID_REQUEST'})
 

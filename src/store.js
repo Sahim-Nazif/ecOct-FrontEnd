@@ -4,7 +4,8 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {cartReducer} from './reducers/cartReducer'
 import { signUpReducer, loginReducer } from "./reducers/userReducer";
-import {placeOrderReducer} from './reducers/orderReducer'
+import {placeOrderReducer,getOrdersByUserId} from './reducers/orderReducer'
+
 
 const reducer=combineReducers ({
 
@@ -13,7 +14,8 @@ const reducer=combineReducers ({
     cartReducer:cartReducer,
     signUpReducer:signUpReducer,
     loginReducer:loginReducer,
-    placeOrderReducer:placeOrderReducer
+    placeOrderReducer:placeOrderReducer,
+    getOrdersByUserId:getOrdersByUserId
 
 })
 

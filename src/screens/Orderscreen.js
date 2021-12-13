@@ -1,6 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { getOrderByUserId } from '../actions/orderActions'
+
 
 const Orderscreen = () => {
+
+
+    const dispatch=useDispatch()
+
+    useEffect(()=>{
+
+        if (localStorage.getItem('currentUser')) {
+            dispatch(getOrderByUserId())
+        }else {
+            window.location.href='/login'
+        }
+
+    })
 
 
     return (
