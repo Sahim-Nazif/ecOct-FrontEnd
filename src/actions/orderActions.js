@@ -28,3 +28,16 @@ export const placeOrder=(token, cartTotal)=>(dispatch, getState)=>{
         dispatch({type:'PLACE_ORDER_FAILED'})
     })
 }
+
+export const getOrderByUserId=()=>{
+    
+    dispatch({type:'GET_ORDERSBYUSERID_REQUEST'})
+
+    axios.post('/api/orders/getordersbyUserid').then(res=>{
+        dispatch({type:'GET_ORDERSBYUSERID_SUCCESS', payload:res.data})
+    }).catch(err=>{
+        dispatch({type:'GET_ORDERSBYUSERID_FAILED', payload:err})
+    })
+
+
+}
