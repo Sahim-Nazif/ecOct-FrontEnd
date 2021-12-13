@@ -8,6 +8,7 @@ import Productdescscreen from './screens/Productdescscreen';
 import Cartscreen from './screens/Cartscreen'
 import Signup from './screens/Signup';
 import Loginscreen from './screens/Loginscreen'
+import Orderscreen from './screens/Orderscreen'
 
 const App=()=> {
   return (
@@ -21,6 +22,7 @@ const App=()=> {
         <Route path='/cart' component={Cartscreen}/>
         <Route path='/signup' component={Signup}/>
         <Route path='/login' component={Loginscreen}/>
+        <Route path='/orders' component={Orderscreen}/>
         </Switch>
       </BrowserRouter>
      
