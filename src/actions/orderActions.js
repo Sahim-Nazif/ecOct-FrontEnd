@@ -29,12 +29,15 @@ export const placeOrder=(token, cartTotal)=>(dispatch, getState)=>{
     })
 }
 
-export const getOrderByUserId=(dispatch)=>{
+export const getOrderByUserId=()=>(dispatch, getState)=>{
+
+    const userid=getState().loginReducer.currentUser._id
     
     dispatch({type:'GET_ORDERSBYUSERID_REQUEST'})
 
-    axios.post('/api/orders/getordersbyUserid').then(res=>{
+    axios.get('/api/orders/getordersbyUserid', {userid:userid}).then(res=>{
         dispatch({type:'GET_ORDERSBYUSERID_SUCCESS', payload:res.data})
+        
     }).catch(err=>{
         dispatch({type:'GET_ORDERSBYUSERID_FAILED', payload:err})
     })
