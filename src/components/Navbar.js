@@ -38,7 +38,7 @@ const{cartItems}=cartReducer
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
+            <li><a className="dropdown-item" href="/orders">Orders</a></li>
             <li><a className="dropdown-item" onClick={()=>{dispatch(logout())}}>Logout</a></li>
           </ul>
         </li>
