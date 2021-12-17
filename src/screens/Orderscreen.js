@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { getOrderByUserId } from '../actions/orderActions'
 import Loader from '../components/Loader'
 import Error from '../components/Error'
+import { Link } from 'react-router-dom'
 
 
 const Orderscreen = () => {
@@ -40,13 +41,17 @@ const Orderscreen = () => {
                         <tbody>
                             {(orders) ? orders.map((order, index)=>{
                                     return (
-                                        <tr key={index}>
+                                     
+                                        <tr key={index} onClick={()=>window.location=`/orderinfo/${order._id}`}>
+                                         
                                         <td>{order._id }</td>
                                          <td>${order.orderAmount}</td>
                                         <td>{new Date(order.createdAt).toDateString()}</td>
                                         <td>{order.transactionId }</td>  
                                         <td>{order.isDelivered ?(<p>Delivered</p>):<p>Order Placed</p> }</td>
+                                     
                                         </tr>
+                                
                                   )
                             }):<Loader/> ? <Error/>:<p>none</p>}
                         </tbody>
