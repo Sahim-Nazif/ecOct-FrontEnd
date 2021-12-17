@@ -9,7 +9,7 @@ import Cartscreen from './screens/Cartscreen'
 import Signup from './screens/Signup';
 import Loginscreen from './screens/Loginscreen'
 import Orderscreen from './screens/Orderscreen'
-
+import Orderinfo from './screens/Orderinfo';
 const App=()=> {
   return (
     <div className="App">
@@ -23,6 +23,7 @@ const App=()=> {
         <Route path='/signup' component={Signup}/>
         <Route path='/login' component={Loginscreen}/>
         <Route path='/orders' component={Orderscreen}/>
+        <Route path='/orderinfo/:orderid' component={Orderinfo}/>
         </Switch>
       </BrowserRouter>
      
