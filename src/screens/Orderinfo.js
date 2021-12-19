@@ -1,5 +1,6 @@
 import React, {useState, useEffect}  from 'react'
 import {useDispatch,useSelector} from 'react-redux'
+import { getOrderById } from '../actions/orderActions'
 
 
 const Orderinfo = ({match}) => {
@@ -8,7 +9,7 @@ const Orderinfo = ({match}) => {
 
     useEffect(() => {
 
-        dispatch(getOrderById())
+        dispatch(getOrderById(match.params.orderid))
     },[])
 
     return (
