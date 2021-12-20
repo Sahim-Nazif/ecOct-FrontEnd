@@ -45,12 +45,12 @@ export const getOrderByUserId=()=>(dispatch, getState)=>{
 
 }
 
-export const getOrderById=(orderid)=>(dispatch, getState)=>{
+export const getOrderById=(id)=>(dispatch, getState)=>{
 
         
     dispatch({type:'GET_ORDERBYID_REQUEST'})
 
-    axios.get('/api/orders/getorderbyid', {orderid:orderid}).then(res=>{
+    axios.get(`/api/orders/getorderbyid/${id}`).then(res=>{
         dispatch({type:'GET_ORDERBYID_SUCCESS', payload:res.data})
         
     }).catch(err=>{
