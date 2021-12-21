@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../actions/productActions';
 import {addToCart} from '../actions/cartActions'
 import Loader from '../components/Loader'
-
+import Review from '../components/Review'
 const Productdescscreen = ({ match }) => {
 
     const productid = match.params.id;
@@ -64,6 +64,8 @@ const Productdescscreen = ({ match }) => {
                              <hr/>
                              <button className='btn btn-dark text-uppercase' onClick={handleAddtoCart}>add to cart</button>
                          </div>
+                         <hr/>
+                          <Review/>
                      </div>
                  </div>
                  </div>
