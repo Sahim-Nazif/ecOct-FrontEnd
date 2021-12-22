@@ -65,7 +65,7 @@ const Productdescscreen = ({ match }) => {
                              <button className='btn btn-dark text-uppercase' onClick={handleAddtoCart}>add to cart</button>
                          </div>
                          <hr/>
-                          <Review/>
+                          <Review product={product}/>
                      </div>
                  </div>
                  </div>

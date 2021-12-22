@@ -1,13 +1,23 @@
 import React, {useState, useEffect} from 'react'
 import Rating from 'react-rating'
+import {useDispatch, useSelector} from 'react-redux'
+import {addProductReview} from '../actions/productActions'
+
 
 const Review = () => {
+
+    const dispatch = useDispatch()
     const [rating, setRating]=useState(5)
     const [comment, setComment]= useState('')
 
-    const submitRating =()=>{
+    const submitRating =({product})=>{
 
-        alert (rating + comment )
+       const review={
+           rating:rating,
+           comment:comment
+       }
+
+       dispatch(addProductReview(review, product._id ))
     }
     return (
         <div>
