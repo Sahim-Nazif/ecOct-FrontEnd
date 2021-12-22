@@ -1,4 +1,4 @@
-import { getAllProductReducer, getProductByIdReducer } from "./reducers/productReducer";
+import { getAllProductReducer, getProductByIdReducer,addProductReviewReducer } from "./reducers/productReducer";
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -16,7 +16,8 @@ const reducer=combineReducers ({
     loginReducer:loginReducer,
     placeOrderReducer:placeOrderReducer,
     getOrdersByUserId:getOrdersByUserId,
-    getOrderByIdReducer:getOrderByIdReducer
+    getOrderByIdReducer:getOrderByIdReducer,
+    addProductReviewReducer:addProductReviewReducer
 
 })
 

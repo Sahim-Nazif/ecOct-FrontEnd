@@ -71,3 +71,15 @@ export const filterProducts=(searchKey, sortKey, category)=>dispatch=>{
         dispatch({type:'GET_PRODUCTS_FAILED'})
     })
 }
+
+export const addProductReview=(review, productid)=>(dispatch,getState)=>{
+
+    dispatch({type:'ADD_PRODUCT_REVIEW_REQUEST'})
+    const currentUser=getState().loginReducer.currentUser
+
+    axios.post('/api/products/addreview', {review, productid, currentUser}).then(res=>{
+        dispatch({type:'ADD_PRODUCT_REVIEW_SUCCESS'})
+    }).catch(err=>{
+        dispatch({type:'ADD_PRODUCT_REVIEW_FAILED'})
+    })
+}
