@@ -4,13 +4,13 @@ import {useDispatch, useSelector} from 'react-redux'
 import {addProductReview} from '../actions/productActions'
 
 
-const Review = () => {
+const Review = ({product}) => {
 
     const dispatch = useDispatch()
     const [rating, setRating]=useState(5)
     const [comment, setComment]= useState('')
 
-    const submitRating =({product})=>{
+    const submitRating =()=>{
 
        const review={
            rating:rating,
