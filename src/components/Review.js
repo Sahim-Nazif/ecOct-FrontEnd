@@ -12,13 +12,27 @@ const Review = ({product}) => {
 
     const submitRating =()=>{
 
-       const review={
-           rating:rating,
-           comment:comment
-       }
+    const currentUser=JSON.parse(localStorage.getItem('currentUser'))
 
-       dispatch(addProductReview(review, product._id ))
+    let alreadyReview;
+    for(let i=0; i<product.reviews.length; i++) {
+        if (product.reviews[i].userid==currentUser._id) {
+            alreadyReview=true
+        }
     }
+    if (alreadyReview) {
+        alert('You have already reviewed this product')
+    }else {
+        const review={
+            rating:rating,
+            comment:comment
+        }
+ 
+        dispatch(addProductReview(review, product._id ))
+     }
+    }
+    
+     
     return (
         <div>
             <h6>Rate this item</h6>
