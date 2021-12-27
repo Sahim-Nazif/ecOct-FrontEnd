@@ -44,6 +44,27 @@ const Review = ({product}) => {
             />
             <input type="text" className='form-control mt-2' value={comment} onChange={(e)=>{setComment(e.target.value)}}/>
             <button className='btn btn-dark mt-3' onClick={()=>submitRating()}>Submit</button>
+            <h5>Recent Ratings</h5>
+            <hr/>
+            {product.reviews &&(product.reviews.map(reviews=>{
+                return (
+                    <>
+                 
+                   <Rating
+
+                   initialRating={reviews.rating}
+                   readonly
+   
+               />
+         
+               <p>{reviews.comment}</p>  
+               <p>{reviews.name}</p>
+             
+               </>
+              
+              )
+            }))}
+            
         </div>
     )
 }

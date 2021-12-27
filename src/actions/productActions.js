@@ -80,6 +80,7 @@ export const addProductReview=(review, productid)=>(dispatch,getState)=>{
     axios.post('/api/product/addreview', {review, productid, currentUser}).then(res=>{
         
         dispatch({type:'ADD_PRODUCT_REVIEW_SUCCESS'})
+        alert('Your review submitted successfully')
     }).catch(err=>{
         dispatch({type:'ADD_PRODUCT_REVIEW_FAILED'})
     })
