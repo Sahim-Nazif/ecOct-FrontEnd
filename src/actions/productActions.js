@@ -81,6 +81,7 @@ export const addProductReview=(review, productid)=>(dispatch,getState)=>{
         
         dispatch({type:'ADD_PRODUCT_REVIEW_SUCCESS'})
         alert('Your review submitted successfully')
+        window.location.reload()
     }).catch(err=>{
         dispatch({type:'ADD_PRODUCT_REVIEW_FAILED'})
     })
