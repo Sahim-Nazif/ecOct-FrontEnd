@@ -12,24 +12,30 @@ const Review = ({product}) => {
 
     const submitRating =()=>{
 
-    const currentUser=JSON.parse(localStorage.getItem('currentUser'))
-
-    let alreadyReview;
-    for(let i=0; i<product.reviews.length; i++) {
-        if (product.reviews[i].userid==currentUser._id) {
-            alreadyReview=true
+    if (localStorage.getItem('currentUser')) {
+        const currentUser=JSON.parse(localStorage.getItem('currentUser'))
+    
+        let alreadyReview;
+        for(let i=0; i<product.reviews.length; i++) {
+            if (product.reviews[i].userid===currentUser._id) {
+                alreadyReview=true
+            }
         }
-    }
-    if (alreadyReview) {
-        alert('You have already reviewed this product')
+     
+        if (alreadyReview) {
+            alert('You have already reviewed this product')
+        }else {
+            const review={
+                rating:rating,
+                comment:comment
+            }
+     
+            dispatch(addProductReview(review, product._id ))
+         }
     }else {
-        const review={
-            rating:rating,
-            comment:comment
-        }
- 
-        dispatch(addProductReview(review, product._id ))
-     }
+        window.location.href='/login';
+    }
+    
     }
     
      

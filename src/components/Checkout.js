@@ -17,6 +17,11 @@ const Checkout = ({amount}) => {
 
         dispatch(placeOrder(token, amount))
     }
+    const verifyLogin=()=>{
+        if(!localStorage.getItem('currentUser')) {
+            window.location.href='/login'
+        }
+    }
     return (
         <div>
             {loading && (<Loader/>)}
@@ -26,7 +31,7 @@ const Checkout = ({amount}) => {
             shippingAddress billingAddress
             
             amount={amount *100} stripeKey='pk_test_51K1Ks4C6vhyiTSQa44WqNH1nJaobtRa02WW2YnaeKcQXXxROGHDOnGIcFXFwcqflRJ7zd8FLqQITgC7eBCk4my7c00Dmeq4m1U'>
-                <button className='btn btn-dark btn-sm mt-4'>Pay Now</button>
+                <button className='btn btn-dark btn-sm mt-4' onClick={()=>verifyLogin()}>Pay Now</button>
             </StripeCheckout>
         </div>
     )
