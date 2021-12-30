@@ -1,11 +1,33 @@
 import React,{useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import Error from '../components/Error'
+import Success from '../components/Success'
+import Loader from '../components/Loader'
 
 const Profilescreen = () => {
 
+    const loginState=useSelector(state=>state.loginReducer)
+
+    const currentUser=loginState.currentUser
+    const {error, success, loading}=loginState
+    const [name, setName]=useState(currentUser.name)
+    const [email, setEmail]=useState(currentUser.email)
+    const [password, setPassword]=useState('')
+    const [changePassword, setChangePassword]=useState('')
+
+
     const update=()=>{
 
-
+        if (password==changePassword) {
+            const updatedUser={
+                name:name,
+                email:email,
+                password:password
+            }
+        }else {
+            alert('Passwords do not match')
+        }
+       
     }
     return (
         <div>
@@ -35,7 +57,7 @@ const Profilescreen = () => {
                 </div>
                 <div className='form-group p-2'>
               
-                    <input type='password' placeholder='Confirm Password' className='form-control' value={confirmPassword} onChange={(e)=>{setConfirmPassword(e.target.value)}}/>
+                    <input type='password' placeholder='Confirm Password' className='form-control' value={changePassword} onChange={(e)=>{setChangePassword(e.target.value)}}/>
                 </div>
            
                 <button className='mt-4 btn btn-dark' onClick={update}>
@@ -46,7 +68,7 @@ const Profilescreen = () => {
             </div>
             </div>
             </div>
-            )
+            
     
     
         </div>

@@ -46,3 +46,18 @@ export const logout=()=>dispatch=>{
 
    window.location.href='/login'
 }
+
+export const updateUser=(updatedUser, userid)=>dispatch=>{
+
+   dispatch({type:'USER_UPDATE_REQUEST'})
+
+   axios.post('/api/user/update', {updatedUser, userid})
+        .then(res=> {
+           dispatch({type:'USER_UPDATE_SUCCESS'})
+        }).catch(error=>{dispatch({type:'USER_UPDATE_FAILED', payload:error})
+
+        console.log(error)
+           
+       })
+
+}
