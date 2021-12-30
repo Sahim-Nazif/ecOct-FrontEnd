@@ -3,13 +3,17 @@ import {useDispatch, useSelector} from 'react-redux'
 import Error from '../components/Error'
 import Success from '../components/Success'
 import Loader from '../components/Loader'
+import {updateUser} from '../actions/userActions'
+
 
 const Profilescreen = () => {
 
+    const dispatch=useDispatch()
+    const updateUserState=useSelector(state=>state.updateReducer)
     const loginState=useSelector(state=>state.loginReducer)
 
     const currentUser=loginState.currentUser
-    const {error, success, loading}=loginState
+    const {error, success, loading}=updateUserState
     const [name, setName]=useState(currentUser.name)
     const [email, setEmail]=useState(currentUser.email)
     const [password, setPassword]=useState('')
@@ -24,6 +28,7 @@ const Profilescreen = () => {
                 email:email,
                 password:password
             }
+            dispatch(updateUser(currentUser._id, updatedUser))
         }else {
             alert('Passwords do not match')
         }
