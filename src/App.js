@@ -10,6 +10,9 @@ import Signup from './screens/Signup';
 import Loginscreen from './screens/Loginscreen'
 import Orderscreen from './screens/Orderscreen'
 import Orderinfo from './screens/Orderinfo';
+import Profilescreen from './screens/Profilescreen'
+
+
 const App=()=> {
   return (
     <div className="App">
@@ -24,6 +27,7 @@ const App=()=> {
         <Route path='/login' component={Loginscreen}/>
         <Route path='/orders' component={Orderscreen}/>
         <Route path='/orderinfo/:orderid' component={Orderinfo}/>
+        <Route path='/profile' component={Profilescreen}/>
         </Switch>
       </BrowserRouter>
      
